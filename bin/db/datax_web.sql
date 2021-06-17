@@ -392,3 +392,5 @@ ALTER TABLE job_info ADD COLUMN chain_json text DEFAULT 0 NULL COMMENT '任务�
 ALTER TABLE `job_log`
     ADD COLUMN `group_id` int(11) DEFAULT NULL COMMENT '任务链分组id用于查看任务连日志以及调用下一个任务';
 
+ALTER TABLE `job_log`
+    ADD INDEX `I_job_id`(`job_id`) USING BTREE;
